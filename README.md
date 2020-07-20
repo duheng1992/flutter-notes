@@ -18,4 +18,4 @@ Dart语法： https://www.dartcn.com/samples/
    
  * 检查是否配置正确 flutter -h （翻墙状态，等待片刻）
  * 检查flutter环境 flutter doctor
- 
+![](https://github.com/duheng1992/flutter-notes/blob/master/flutter-doctor.png?raw=true)
