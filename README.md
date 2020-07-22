@@ -1,6 +1,6 @@
 # flutter-notes
 
-> 多端开发：
+多端开发：
 
 > cordova / ionic  js编译，图形性能差  30帧
 
@@ -55,12 +55,14 @@ Dart语法： https://www.dartcn.com/samples/
     安装好后执行
     ```shell
     flutter doctor --android-licenses
-```
+    ```
   * 安装xcode
+  
   appstore下载
   > 常见问题：CocoaPods not installed ==> 处理方式： brew install cocoapods
   
   * homebrew安装
+  
   ```shell
     /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
   ```
