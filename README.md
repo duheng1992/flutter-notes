@@ -128,7 +128,7 @@ decoration: BoxDecoration(
 |参数|说明|
 |  ----  | ----  |
 |margin|-|
-|padding|-|
+|padding|EdgeInsets类|
 |transform|-|
 |height|-|
 |width|-|
@@ -158,3 +158,106 @@ child: Image.network(
 |height|-|
 |width|-|
 |repeat|ImageRepeat.repeat : 横向和纵向都进行重复，直到铺满整个画布。<br>ImageRepeat.repeatX: 横向重复，纵向不重复。<br>ImageRepeat.repeatY：纵向重复，横向不重复。|
+
+
+* ListView()
+
+|参数|说明|
+|  ----  | ----  |
+|scrollDirection|Axis.horizontal 水平列表 <br> Axis.vertical 垂直列表|
+|padding|-|
+|resolve|组件反向排序|
+|children|List<Widget>|
+	
+```dart
+// 静态列表
+return Center(
+	child: ListView(
+		children: <Widget>[
+			ListTile(
+				leading: Icon(Icons.phone), // 前缀图标
+				title: Text("this is list",style: TextStyle(fontSize: 28.0),),
+				subtitle: Text('this is list this is list'),
+				),
+			ListTile(
+				title: Text("this is list"),
+				subtitle: Text('this is list this is list'),
+				trailing: Icon(Icons.phone),  // 后缀图标
+				)
+...
+		]
+	)
+```
+
+// 动态列表
+```dart
+class HomeContent extends StatelessWidget{
+   List<Widget>  _listViewData(){
+    List<Widget> list = List();
+    for (var i = 0; i <  20; i++) {
+      list.add(
+        ListTile(
+        title: Text('我是第$i个cell'),
+      ));
+    }
+  return list;
+  }
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: EdgeInsets.all(10),
+      scrollDirection: Axis.vertical,
+      children: this._listViewData(),
+    );
+  }
+
+}
+```
+
+* GridView.count()
+* GridView.builder()
+
+|参数|说明|
+|  ----  | ----  |
+|scrollDirection| Axis| 滚动方法|
+|padding| EdgeInsetsGeometry类| 内边距|
+|resolve| bool| 组件反向排序|
+|crossAxisSpacing| double| 水平子 Widget 之间间距|
+|mainAxisSpacing| double| 垂直子 Widget 之间间距|
+|crossAxisCount| int| 一行的 Widget 数量|
+|childAspectRatio |double |子Widget 宽高比例|
+|children |<Widget>[ ]|
+|gridDelegate| SliverGridDelegateWithFixed <br>CrossAxisCount（常用）<br> SliverGridDelegateWithMax<br> CrossAxisExtent| 控制布局主要用在GridView.builder 里面
+	
+```dart
+// 写法一
+GridView.count(
+	//水平子Widget之间间距
+	crossAxisSpacing: 10.0,
+	//垂直子Widget之间间距
+	mainAxisSpacing: 30.0,
+	//GridView内边距
+	padding: EdgeInsets.all(10.0),
+	//一行的Widget数量
+	crossAxisCount: 2,
+	//子Widget宽高比例
+	childAspectRatio: 2.0,
+	//子Widget列表
+	children: getWidgetList(),
+);
+
+// 写法二
+Padding(
+      padding: const EdgeInsets.all(10),
+      child: GridView.builder(
+        primary: false,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        scrollDirection: Axis.horizontal,
+        children: ...
+      )
+)
+
+// 更多用法
+https://book.flutterchina.club/chapter6/gridview.html
+```
