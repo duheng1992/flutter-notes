@@ -79,3 +79,82 @@ Dart语法： https://www.dartcn.com/samples/
   
   
   ## 3、常用组件
+
+* Text()
+
+|参数|说明|
+|  ----  | ----  |
+|textAlign|center / left / right / justify|
+|textDirection|ltr / rtl|
+|overflow|clip 裁剪，fade 渐隐，ellipsis 省略号|
+|textScaleFactor|字体显示倍率|
+|maxLines|-|
+|style|TextStyle对象|
+
+* TextStyle()
+
+|参数|说明|
+|  ----  | ----  |
+|decoration|none 没有线，lineThrough 删除线，overline 上划线，underline 下划线|
+|decorationColor|-|
+|decorationStyle|[dashed,dotted]虚线，double 两根线，solid 一根实线，wavy 波浪线|
+|wordSpacing|文字间隙|
+|fontStyle|italic 斜体，normal 正常体 ...|
+|letterSpacing|-|
+|color|Color对象|
+|fontSize|-|
+|fontWeight|bold 粗体，normal 正常体|
+
+* Container()
+
+|参数|说明|
+|  ----  | ----  |
+|alignment|topCenter：顶部居中对齐<br> topLeft：顶部左对齐<br> topRight：顶部右对齐<br> center：水平垂直居中对齐<br> centerLeft：垂直居中水平居左对齐<br> centerRight：垂直居中水平居右对齐<br> bottomCenter 底部居中对齐<br> bottomLeft：底部居左对齐<br> bottomRight：底部居右对齐|
+|decoration|(见代码)|
+
+```dart
+decoration: BoxDecoration(
+  color: Colors.blue,
+  border: Border.all(
+  color: Colors.red,
+    width: 2.0,
+  ),
+  borderRadius:
+  BorderRadius.all(
+    Radius.circular(8.0)
+  )
+)
+```
+|参数|说明|
+|  ----  | ----  |
+|margin|-|
+|padding|-|
+|transform|-|
+|height|-|
+|width|-|
+|child|-|
+
+* Image.asset() 本地图片
+* Image.network() 远程图片
+
+|参数|说明|
+|  ----  | ----  |
+|alignment|同上|
+|color / colorBlendMode|(见代码)|
+```dart
+child: Image.network(
+	"http://pic.baike.soso.com/p/20130828/20130828161137-1346445960.jpg",
+	alignment: Alignment.topLeft,
+	color: Colors.red,
+	colorBlendMode:
+	BlendMode.colorDodge, 
+	repeat: ImageRepeat.repeatX,
+	fit: BoxFit.cover,
+), 
+```
+|参数|说明|
+|  ----  | ----  |
+|fit|BoxFit.fill:全图显示，图片会被拉伸，并充满父容器。<br>BoxFit.contain:全图显示，显示原比例，可能会有空隙。<br>BoxFit.cover：显示可能拉伸，可能裁切，充满（图片要充满整个容器，还不变形）<br>BoxFit.fitWidth：宽度充满（横向充满），显示可能拉伸，可能裁切。<br>BoxFit.fitHeight ：高度充满（竖向充满）,显示可能拉伸，可能裁切。<br>BoxFit.scaleDown：效果和 contain 差不多，但是此属性不允许显示超过源图片大小，可小不可大。|
+|height|-|
+|width|-|
+|repeat|ImageRepeat.repeat : 横向和纵向都进行重复，直到铺满整个画布。<br>ImageRepeat.repeatX: 横向重复，纵向不重复。<br>ImageRepeat.repeatY：纵向重复，横向不重复。|
