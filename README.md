@@ -17,9 +17,9 @@
 |内存-cpu-魅蓝Metal|	初始30M ,滑动5000稳定后32M，cpu22%|	初始38M,滑动5000，稳定在60M,cpu45%|	初始：7.6M ,滑动5000条稳定在12M,cpu10%|
 |内存-cpu-魅族Pro5|	初始85M ,滑动5000条稳定后110M，cpu12%|	初始56M,滑动5000，稳定在104M,cpu22%|	初始：29.5M ,滑动5000条稳定在42M,cpu7%|
 |内存-cpu-华为P20Pro|	初始99M ,滑动5000条稳定110M，cpu12%|	初始63M,滑动5000，稳定在80M,cpu22%|	初始：25M ,滑动5000条稳定在32M,cpu8%|
-|主观感受|	无卡顿	|滚动100条之后有卡顿	|丝滑般|
+|主观感受|	无卡顿	|滚动100条之后有卡顿	|丝滑|
 
- 
+
 * 开源项目
 https://flutterchina.club/opensource.html
 
@@ -87,6 +87,11 @@ Dart语法： https://www.dartcn.com/samples/
   ```
   > （坑：重新打开终端发现flutter指令失效：source ~/.bath_profile只在当前会话生效，新版mac（catalina以后）把zsh作为shell脚本，默认不会加载.bash_profile, 需在.zshrc文件中加入相关配置）
   
+  启动
+  
+  ```
+    flutter run 
+  ```
   
   ## 3、常用组件
 
