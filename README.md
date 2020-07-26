@@ -93,6 +93,9 @@ Dart语法： https://www.dartcn.com/samples/
     flutter run 
   ```
   
+  依赖安装
+  https://pub.flutter-io.cn/flutter/packages
+  
   ## 3、常用组件
 
 * Text()
