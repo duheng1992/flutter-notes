@@ -285,6 +285,8 @@ https://book.flutterchina.club/chapter6/gridview.html
   
 * 路由跳转
 
+* 静态资源配置
+
 * http
 
 ## 总结
