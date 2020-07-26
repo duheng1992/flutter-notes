@@ -289,6 +289,11 @@ https://book.flutterchina.club/chapter6/gridview.html
 
 * http
 
+* 打包
+
+ios: flutter build ios --release
+
+
 ## 总结
 1 使用上手更简单，多端开发效率更高
 2 对交互有要求
